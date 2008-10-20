@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary 中文簡介
 
 從去年底 Mac OS X 10.5 Leopard 推出開始，在 Mac OS X 上開發輸入法軟體，勢必會面臨這樣一個問題－從 10.4 到 10.5 之間，作業系統所提供的輸入法架構有了重大改變，那麼，應該怎樣以經濟有效的方式，同時兼顧兩個不同的平台與架構？
 
