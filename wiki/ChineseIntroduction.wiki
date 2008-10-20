@@ -75,6 +75,6 @@ IMK-Tiger 包括定義 DO 連線的一個 header file（因為 10.4 上面沒有
 
 == IMK v.s InputMethodKit backporting component ==
 
-與 10.5 所提供的 IMK 相較，IMK-Tiger 並沒有完成所有的 IMK 實作。InputMethodKit backporting component 完成的是 client side 與 server side 之間的連線，並不包含 IMK 提供給 server 端的各種工具，例如，我們並沒有實作像 <a href="http://developer.apple.com/documentation/Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html">IMKCandidates</a> 所提供的選字窗介面，如果要使用選字窗，就自己在 server 端放一個 NSwindow，自行設計。－而且老實說，就目前可以看到的 OS X 輸入法發展，好像所有的第三方輸入法開發者中，也沒有人打算用 OSX 本身提供的選字窗就是了…。
+與 10.5 所提供的 IMK 相較，IMK-Tiger 並沒有完成所有的 IMK 實作。InputMethodKit backporting component 完成的是 client side 與 server side 之間的連線，並不包含 IMK 提供給 server 端的各種工具，例如，我們並沒有實作像 [http://developer.apple.com/documentation/Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html IMKCandidates] 所提供的選字窗介面，如果要使用選字窗，就自己在 server 端放一個 NSwindow，自行設計。－而且老實說，就目前可以看到的 OS X 輸入法發展，好像所有的第三方輸入法開發者中，也沒有人打算用 OSX 本身提供的選字窗就是了…。
 
 另外，就是在 client 在 server 並沒有正常啟動的狀況下，行為略有不同。IMK 會變成使用英數字元輸出，IMK-Tiger 的行為則是不出字。而就開發上，IMK-Tiger 可能還會更為穩定一些，IMK 是用 launchd 啟動，所以當你想要 kill 掉原本的 process，可能 kill 一次還不乾淨，至於 IMK-Tiger 的 server，則是下一個 kill，就 kill 掉了。
