@@ -12,7 +12,7 @@ http://farm4.static.flickr.com/3016/2954508941_11d02ee619_o.jpg
 
 === TSM ===
 
-一套 TSM 輸入法，用 OS X 的術語，是一個 system component，是一個供作業系統載入的 loadable bundle（其實就是一個 dynamic loadable library，像是 Windows 上面的 .dll 檔案，或是 *nix 上面用 dlopen() 載入 .so 一樣；不過，OS X 上的習慣是會將個這個 library 或是 excutable binary，與其會用到的各種資源，整理在同一個目錄下，按照固定的慣例整理，這種目錄稱之為 bundle。可參見 [http://developer.apple.com/documentation/CoreFoundation/Conceptual/CFBundles/CFBundles.html Bundle Programming Guide]）。
+一套 TSM 輸入法，用 OS X 的術語，是一個 system component，是一個供作業系統載入的 loadable bundle（其實就是一個 dynamic loadable library，像是 Windows 上面的 .dll 檔案，或是 unix 上面用 dlopen() 載入 .so 一樣；不過，OS X 上的習慣是會將個這個 library 或是 excutable binary，與其會用到的各種資源，整理在同一個目錄下，按照固定的慣例整理，這種目錄稱之為 bundle。可參見 [http://developer.apple.com/documentation/CoreFoundation/Conceptual/CFBundles/CFBundles.html Bundle Programming Guide]）。
 
 每個應用程式在需要使用輸入法的時候，便載入一次這套輸入法的 library，換言之，如果你同時開啟了十套應用程式，而且每個應用程式都需要使用輸入法，那麼，同一套輸入法，也就先後在不同的應用程式中載入了十次。
 
@@ -20,7 +20,7 @@ http://farm4.static.flickr.com/3016/2954508941_11d02ee619_o.jpg
 
 至於一套 IMK 輸入法，本身便是一個應用程式的 Bundle，這個程式與其他應用程式不同的地方在於隱藏了大部分的 UI，例如不顯示在 Dock 上，不顯示主選單（不過，只要你高興，也可以顯示這部份的 UI）。每個應用程式要使用輸入法時，只要啟動一套輸入法應用程式，每個應用程式使用輸入法的方法，則是當應用程式收到了鍵盤與滑鼠事件後，透過跨應用程式通訊，將事件送給輸入法軟體，經過適當的處理之後，再透過跨應用程式通訊，將結果回傳給正在使用輸入法的應用程式。
 
-OS X 應用程式普遍使用 <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/DistrObjects/DistrObjects.html">Distributed Objects</a>（分散式物件，以下簡稱 DO）進行跨應用程式通訊。兩套應用程式在使用 DO 通訊時，可以直接互相交換 NSObject 物件，比方說直接把整個 NSArray、NSDictionary 或是 NSImage 丟到對方那邊，寫起來就只像是兩個 Objective-C class 在交換資料而已。以 IMK 輸入法所使用的 DO 來說，則是應用程式中負責文字輸入的那個部分，將所有傳入的事件都以 NSEvent 物件包裝好，送到輸入法那一端，而輸入法先決定要處理那些事件，再回傳應該顯示在輸入緩衝區、或是送入應用程式中的 NSString，或是用一個 NSRange 物件設定輸入緩衝區中應該以較粗的底線強調顯示的區塊的前後範圍。
+OS X 應用程式普遍使用  [http://developer.apple.com/documentation/Cocoa/Conceptual/DistrObjects/DistrObjects.htm Distributed Objects]（分散式物件，以下簡稱 DO）進行跨應用程式通訊。兩套應用程式在使用 DO 通訊時，可以直接互相交換 NSObject 物件，比方說直接把整個 NSArray、NSDictionary 或是 NSImage 丟到對方那邊，寫起來就只像是兩個 Objective-C class 在交換資料而已。以 IMK 輸入法所使用的 DO 來說，則是應用程式中負責文字輸入的那個部分，將所有傳入的事件都以 NSEvent 物件包裝好，送到輸入法那一端，而輸入法先決定要處理那些事件，再回傳應該顯示在輸入緩衝區、或是送入應用程式中的 NSString，或是用一個 NSRange 物件設定輸入緩衝區中應該以較粗的底線強調顯示的區塊的前後範圍。
 
 雖然 10.5 提供了 IMK 架構，但是在 10.5 上面仍然可以繼續使用 TSM 輸入法，而就個人最近所接觸到的 Mac 應用程式專案的經驗，在市面上使用 10.4 的使用者，大概仍然有五成之譜。如果開發 TSM 架構的輸入法就可以顧及 10.4 與 10.5 的使用者，那麼，為什麼要開發 IMK 輸入法？
 
@@ -28,15 +28,13 @@ OS X 應用程式普遍使用 <a href="http://developer.apple.com/documentation/
 
 為什麼 Apple 要改變輸入法架構？Apple 一直沒有說清楚，但猜想與接下來 OS X 走向 64 位元有關。
 
-在 64 位元作業系統上，還要可以執行一些既有的 32 位元軟體，如果還要使用 TSM 架構，而 64 位元與 32 位元應用程式會需要不同的 loadable bundle，那麼，同一套輸入法想要在不同軟體中都能夠使用，就得要分別有 32 位元與 64 位元的版本，像目前 Vista 64 上要使用 IME 輸入法，就有這樣的問題（不妨參見<a href="http://ithelp.ithome.com.tw/question/10002274">〈關於64位元的嘸蝦米〉</a>乙文，而 Vista 64 到目前為止還是讓許多人卻步，原因之一就是許多輸入法還沒有－甚至沒有打算－過渡到 64 位元）。
+在 64 位元作業系統上，還要可以執行一些既有的 32 位元軟體，如果還要使用 TSM 架構，而 64 位元與 32 位元應用程式會需要不同的 loadable bundle，那麼，同一套輸入法想要在不同軟體中都能夠使用，就得要分別有 32 位元與 64 位元的版本，像目前 Vista 64 上要使用 IME 輸入法，就有這樣的問題（不妨參見 [http://ithelp.ithome.com.tw/question/10002274 〈關於64位元的嘸蝦米〉]乙文，而 Vista 64 到目前為止還是讓許多人卻步，原因之一就是許多輸入法還沒有－甚至沒有打算－過渡到 64 位元）。
 
 而如果是換成跨應用程式通訊，便沒有 64/32 位元的問題，64 位元作業系統中的 64 位元應用程式照樣可以使用 32 位元輸入法；而如果在全面改用 64 位元作業系統之前，就開始改變架構，而新架構又是相對簡單，讓既有的第三方輸入法廠商有時間改變設計，那麼也該可以避免 32/64 轉換之間的陣痛。
 
-就開發者與使用者利益的立場，如果現在還在繼續開發 TSM 輸入法，雖然 10.4 與 10.5 上都可以使用，但搞不好下一版作業系統就停止支援－與此相關的是，TSM 輸入法使用 Carbon API，現在誰也說不準下一版作業系統還有沒有 Carbon。所有的消息都指向 Apple 會逐漸拿掉 Carbon，像昨天又有這麼一則消息：<a href="http://www.oikos.com.tw/v4/viewtopic.php?id=50065">Mac OS X 10.6 的 Finder 以 Cocoa 重新改寫</a>，不過我其實一直很納悶 Apple 是否真的有能力全部轉換到 Cocoa 上，Finder 用 Cocoa 改寫就算了，可是 iTunes 這種還有 Windows 版本的軟體就不知道要花多少力氣換到 Cocoa 上－雖然 Safari 就是同時有 Cocoa 與 Windows 版本。
+就開發者與使用者利益的立場，如果現在還在繼續開發 TSM 輸入法，雖然 10.4 與 10.5 上都可以使用，但搞不好下一版作業系統就停止支援－與此相關的是，TSM 輸入法使用 Carbon API，現在誰也說不準下一版作業系統還有沒有 Carbon。此外，即使在 10.5 上可以使用 TSM 輸入法，但是仍然有不少的相容性問題，特別是發生在 10.5 作業系統中使用某些 Carbon 應用程式的時候，常會有無法出字或卡住的狀況。
 
-此外，即使在 10.5 上可以使用 TSM 輸入法，但是仍然有不少的相容性問題，特別是發生在 10.5 作業系統中使用某些 Carbon 應用程式的時候，常會有無法出字或卡住的狀況。QIM 最近也推出了 IMK 版本，也<a href="http://hi.baidu.com/gliderx/blog/item/d6f001385acb0c22b9998f9f.html">說</a>：「他可以解決很多原來 QIM 在 Leopard 出現的各種奇怪問題。」
-
-而單純就開發者的立場，如果您是現在才開始打算寫 OS X 上的輸入法，誠心的建議您直接寫 IMK，寫一套 IMK 輸入法可說是輕鬆愉快，而寫 TSM 輸入法則是受罪。就 API 來說，寫 IMK 輸入法只要自己繼承一個 <a href="http://developer.apple.com/documentation/Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html">IMKInputController</a> class 實作，然後設定好一個 delegate 物件實作 <a href="http://developer.apple.com/documentation/Cocoa/Reference/IMKServerInput_Additions/Reference/IMKServerInput.html">IMKServerInput</a> Protocol 裡頭幾個負責接收事件的 method，在這些 method 中對傳入的 sender 物件做些事情，sender 就是正在使用輸入法的應用程式，取好一個特定的連線名稱，搞定收工。而如果是 TSM，則是又要處理古老又麻煩的 <a href="http://zonble.twbbs.org/archives/2005_07/789.php">resource fork</a>，一大堆<a href="http://zonble.twbbs.org/archives/2005_07/790.php">命名不知所云狀態又複雜的 Carbon 事件</a>。
+而單純就開發者的立場，如果您是現在才開始打算寫 OS X 上的輸入法，誠心的建議您直接寫 IMK，寫一套 IMK 輸入法可說是輕鬆愉快，而寫 TSM 輸入法則是受罪。就 API 來說，寫 IMK 輸入法只要自己繼承一個  [http://developer.apple.com/documentation/Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html IMKInputController] class 實作，然後設定好一個 delegate 物件實作  [http://developer.apple.com/documentation/Cocoa/Reference/IMKServerInput_Additions/Reference/IMKServerInput.html IMKServerInput] Protocol 裡頭幾個負責接收事件的 method，在這些 method 中對傳入的 sender 物件做些事情，sender 就是正在使用輸入法的應用程式，取好一個特定的連線名稱，搞定收工。而如果是 TSM，則是又要處理古老又麻煩的 <a href="http://zonble.twbbs.org/archives/2005_07/789.php">resource fork</a>，一大堆<a href="http://zonble.twbbs.org/archives/2005_07/790.php">命名不知所云狀態又複雜的 Carbon 事件</a>。
 
 另外，如果你寫的是智慧選字輸入法，如智慧型注音或是拼音，TSM 架構又有另外一個問題－因為每份輸入法都是在不同的應用程式中分別載入，所以，假如使用者在這個應用程式中對輸入法做了某些調整，但是在另外一個應用程式所載入的另外一份輸入法，卻不會同時立即更新。將輸入法集中在同一個應用程式還有另一個好處，就是，既然輸入法只使用一份記憶體，那麼便可以開始放心大膽的濫用…呃…善用 OS X 所提供的豐富使用者介面元件，比方說，你也可以在輸入法裡頭用個 cover flow 效果…。
 
