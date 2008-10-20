@@ -22,7 +22,7 @@ that can be a big distraction.
 
 There is a catch--IMK is Leopard-only. In a market like Taiwan, where
 Traditional Chinese is the main written language, there are still 45%-55%
-of users still having their Tiger machines around, and this is a market
+of users having their Tiger machines around, and this is a market
 we want to continue supporting.
 
 What if we could replicate IMK on Tiger? In fact we can and have. IMK-Tiger
