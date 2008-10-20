@@ -17,7 +17,7 @@ Please find the details in the project home mentioned above. We have supplied a 
 
 Note that we call it a backporting component, not a library, because it is not as trivial as linking to a library and voilà. But the crux is to customize IMK-Tiger's ComponentConfig.h so that the TSM component provided can establish connection to your IMK server process (and launch it if it hasn't). But once you have finished knitting everything together, you can concentrate on improving your IMK-based code. 
 
-For now IMK-Tiger doesn't support -[IMKInputController recognizedEvents:] and -[IMKInputController currentKeyboardLayout], and you must implement -[IMKInputController handleEvent:client:] to handle the keyboard 
+For now IMK-Tiger doesn't support {{{-[IMKInputController recognizedEvents:]}}} and {{{-[IMKInputController}}} currentKeyboardLayout], and you must implement {{{-[IMKInputController handleEvent:client:]}}} to handle the keyboard 
 event. 
 
 IMK-Tiger is open source released under the BSD License. Feedback and 
