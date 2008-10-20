@@ -6,13 +6,13 @@ OpenVanilla 專案的下一個版本 0.9 版（專案代號 Oranje），裡頭�
 
 == TSM v.s IMK. Dynamic Loading v.s Client/Server ==
 
-在 Mac OS X 10.4 以及之前版本的 Mac OS X，所採用的輸入法架構為 <a href="http://developer.apple.com/documentation/Carbon/Reference/Text_Services_Manager/Reference/reference.html">Text Service Manager</a>（以下簡稱 TSM），到了 10.5 之後，Apple 加入了 <a href="http://developer.apple.com/documentation/Cocoa/Reference/InputMethodKitRefUpdate/Introduction/Introduction.html">Input Method Kit</a>（以下簡稱 IMK）這套架構。用最簡單的話描述這兩套架構的差別，就是，TSM 採用的是 Dynamic Loading，而 IMK 則是一套 Client/Server 架構。
+在 Mac OS X 10.4 以及之前版本的 Mac OS X，所採用的輸入法架構為 [http://developer.apple.com/documentation/Carbon/Reference/Text_Services_Manager/Reference/reference.html Text Service Manager]（以下簡稱 TSM），到了 10.5 之後，Apple 加入了 [http://developer.apple.com/documentation/Cocoa/Reference/InputMethodKitRefUpdate/Introduction/Introduction.html Input Method Kit]（以下簡稱 IMK）這套架構。用最簡單的話描述這兩套架構的差別，就是，TSM 採用的是 Dynamic Loading，而 IMK 則是一套 Client/Server 架構。
 
-<a href="http://www.flickr.com/photos/zonble/2954508941/" title="Flickr 上 zonble 的 TSM IMK"><img src="http://farm4.static.flickr.com/3016/2954508941_11d02ee619_o.jpg" width="499" height="300" alt="TSM IMK" /></a>
+http://farm4.static.flickr.com/3016/2954508941_11d02ee619_o.jpg
 
 === TSM ===
 
-一套 TSM 輸入法，用 OS X 的術語，是一個 system component，是一個供作業系統載入的 loadable bundle（其實就是一個 dynamic loadable library，像是 Windows 上面的 .dll 檔案，或是 *nix 上面用 dlopen() 載入 .so 一樣；不過，OS X 上的習慣是會將個這個 library 或是 excutable binary，與其會用到的各種資源，整理在同一個目錄下，按照固定的慣例整理，這種目錄稱之為 bundle。可參見 <a href="http://developer.apple.com/documentation/CoreFoundation/Conceptual/CFBundles/CFBundles.html"><em>Bundle Programming Guide</em></a>）。
+一套 TSM 輸入法，用 OS X 的術語，是一個 system component，是一個供作業系統載入的 loadable bundle（其實就是一個 dynamic loadable library，像是 Windows 上面的 .dll 檔案，或是 *nix 上面用 dlopen() 載入 .so 一樣；不過，OS X 上的習慣是會將個這個 library 或是 excutable binary，與其會用到的各種資源，整理在同一個目錄下，按照固定的慣例整理，這種目錄稱之為 bundle。可參見 [http://developer.apple.com/documentation/CoreFoundation/Conceptual/CFBundles/CFBundles.html Bundle Programming Guide]）。
 
 每個應用程式在需要使用輸入法的時候，便載入一次這套輸入法的 library，換言之，如果你同時開啟了十套應用程式，而且每個應用程式都需要使用輸入法，那麼，同一套輸入法，也就先後在不同的應用程式中載入了十次。
 
