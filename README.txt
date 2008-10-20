@@ -11,10 +11,10 @@ You can find the project at:
 A summary:
 
 OS X 10.5 introduced InputMethodKit (IMK), arguably the best OS-level
-input method framework in the industry. IMK simplifies input method
-development with a client-server design, powered by Objective-C's 
-distributed object mechanism. Input method developers only need to talk
-to a very slim and object-oriented interface to provide input method
+input method framework in the industry. IMK is pure Cocoa and greately
+simplifies input method development with a client-server design, powered by
+Objective-C's distributed object mechanism. Input method developers only need
+to talk to a very slim and object-oriented interface to provide input method
 service to OS X. This allows developers to concentrate on algorithms and
 user experience. On other platforms, OS X 10.4 included, input method
 development involves many platform-specific details and debugging headaches
