@@ -34,7 +34,7 @@ OS X 應用程式普遍使用  [http://developer.apple.com/documentation/Cocoa/C
 
 就開發者與使用者利益的立場，如果現在還在繼續開發 TSM 輸入法，雖然 10.4 與 10.5 上都可以使用，但搞不好下一版作業系統就停止支援－與此相關的是，TSM 輸入法使用 Carbon API，現在誰也說不準下一版作業系統還有沒有 Carbon。此外，即使在 10.5 上可以使用 TSM 輸入法，但是仍然有不少的相容性問題，特別是發生在 10.5 作業系統中使用某些 Carbon 應用程式的時候，常會有無法出字或卡住的狀況。
 
-而單純就開發者的立場，如果您是現在才開始打算寫 OS X 上的輸入法，誠心的建議您直接寫 IMK，寫一套 IMK 輸入法可說是輕鬆愉快，而寫 TSM 輸入法則是受罪。就 API 來說，寫 IMK 輸入法只要自己繼承一個  [http://developer.apple.com/documentation/Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html IMKInputController] class 實作，然後設定好一個 delegate 物件實作  [http://developer.apple.com/documentation/Cocoa/Reference/IMKServerInput_Additions/Reference/IMKServerInput.html IMKServerInput] Protocol 裡頭幾個負責接收事件的 method，在這些 method 中對傳入的 sender 物件做些事情，sender 就是正在使用輸入法的應用程式，取好一個特定的連線名稱，搞定收工。而如果是 TSM，則是又要處理古老又麻煩的 <a href="http://zonble.twbbs.org/archives/2005_07/789.php">resource fork</a>，一大堆<a href="http://zonble.twbbs.org/archives/2005_07/790.php">命名不知所云狀態又複雜的 Carbon 事件</a>。
+而單純就開發者的立場，如果您是現在才開始打算寫 OS X 上的輸入法，誠心的建議您直接寫 IMK，寫一套 IMK 輸入法可說是輕鬆愉快，而寫 TSM 輸入法則是受罪。就 API 來說，寫 IMK 輸入法只要自己繼承一個  [http://developer.apple.com/documentation/Cocoa/Reference/IMKInputController_Class/Reference/IMKInputController_ref.html IMKInputController] class 實作，然後設定好一個 delegate 物件實作  [http://developer.apple.com/documentation/Cocoa/Reference/IMKServerInput_Additions/Reference/IMKServerInput.html IMKServerInput] Protocol 裡頭幾個負責接收事件的 method，在這些 method 中對傳入的 sender 物件做些事情，sender 就是正在使用輸入法的應用程式，取好一個特定的連線名稱，搞定收工。而如果是 TSM，則是又要處理古老又麻煩的 [http://zonble.twbbs.org/archives/2005_07/789.php resource fork]，一大堆 [http://zonble.twbbs.org/archives/2005_07/790.php 命名不知所云狀態又複雜的 Carbon 事件]。
 
 另外，如果你寫的是智慧選字輸入法，如智慧型注音或是拼音，TSM 架構又有另外一個問題－因為每份輸入法都是在不同的應用程式中分別載入，所以，假如使用者在這個應用程式中對輸入法做了某些調整，但是在另外一個應用程式所載入的另外一份輸入法，卻不會同時立即更新。將輸入法集中在同一個應用程式還有另一個好處，就是，既然輸入法只使用一份記憶體，那麼便可以開始放心大膽的濫用…呃…善用 OS X 所提供的豐富使用者介面元件，比方說，你也可以在輸入法裡頭用個 cover flow 效果…。
 
@@ -56,7 +56,7 @@ OS X 應用程式普遍使用  [http://developer.apple.com/documentation/Cocoa/C
 
 基本的想法非常簡單－10.4 沒有 IMK，但是 IMK 的基礎是一個應用程式 bundle，還有 DO，而  10.4 當然可以跑應用程式 bundle，也有 DO。在 10.5 上，作業系統自己做好每個應用程式負責處理文字的部份，與 IMK 之間的 DO 連線，在 10.4 上，我們也只要讓每個應用程式負責文字輸入的那個部分與 IMK 連線，就可以了。
 
-<a href="http://www.flickr.com/photos/zonble/2957895594/" title="Flickr 上 zonble 的 imk tiger"><img src="http://farm4.static.flickr.com/3169/2957895594_ff6658600c_o.jpg" width="409" height="325" alt="imk tiger" /></a>
+http://farm4.static.flickr.com/3169/2957895594_ff6658600c_o.jpg
 
 所以我們將輸入法分成 client 與 server 兩個部分。輸入法 server 端是一個應用程式 bundle，如果已經在 10.5 上寫好了一個 IMK 輸入法，可以幾乎原封不動的變成這個輸入法 server；client 是一個 TSM component，但是這個 TSM component 並不處理輸入法的邏輯－比方說那些字根對應到哪個中文，只單純將所有收到的 Carbon 事件翻譯成 NS 事件，透過 DO 丟給輸入法 server 處理，如果 client 發現 server 並不在執行中，就把 server 打開，等 server 啟動後傳入事件，DO 中所使用的 method 完全比照 IMK。server 處理完，便回傳給 TSM client，client 再把 NS 物件轉換成 Carbon 物件，送入使用者正在使用的應用程式中。
 
@@ -64,12 +64,10 @@ IMK-Tiger 包括定義 DO 連線的一個 header file（因為 10.4 上面沒有
 
 如果您已經在 10.5 上，寫好了一套 IMK 輸入法，要透過 InputMethodKit backporting component，讓您的輸入法變成 10.4/10.5 都能使用，其實只要做幾件事情。
 
-
-  * 打開 Xcode，在原本的 project file 中，加入一個 Cocoa loadable bundle 的 target，然後把 IMK-Tiger 的 TSM client 程式碼放進這個 target。這邊還有一些設定要做，暫且不表。</li>
-  * 把原本的 IMK 輸入法的 target，原封不動複製一份。</li>
-  * 在上一步新增的 target 中，把你原本 link 的 InputMethodKit.framework 拿掉；然後，在你原本引入 InputMethodKit 的 header 的地方，全都換成 InputMethodKit backporting component 提供的 header。這一步也可以透過 define 的方式來做，例如定義 base SDK 是 10.5 就用 InputMethodKit.framework 的 header，10.4 就用 IMK-Tiger 的 header。</li>
+  * 打開 Xcode，在原本的 project file 中，加入一個 Cocoa loadable bundle 的 target，然後把 IMK-Tiger 的 TSM client 程式碼放進這個 target。這邊還有一些設定要做，暫且不表。
+  * 把原本的 IMK 輸入法的 target，原封不動複製一份。
+  * 在上一步新增的 target 中，把你原本 link 的 InputMethodKit.framework 拿掉；然後，在你原本引入 InputMethodKit 的 header 的地方，全都換成 InputMethodKit backporting component 提供的 header。這一步也可以透過 define 的方式來做，例如定義 base SDK 是 10.5 就用 InputMethodKit.framework 的 header，10.4 就用 IMK-Tiger 的 header。
   * 再改一下 project file 的設定，加入一個 copy file phrase，再設定一下 dependency，要 Xocde 再編 TSM client 之前先編好 IMK-Tiger server，最後把編出來 IMK-Tiger server ，複製到 TSM client 的 bundle 中的 Shared Support 目錄下。
-
 
 做完以上幾步，便可以拿去 10.4 機器上測試看看。
 
@@ -80,6 +78,3 @@ IMK-Tiger 包括定義 DO 連線的一個 header file（因為 10.4 上面沒有
 與 10.5 所提供的 IMK 相較，IMK-Tiger 並沒有完成所有的 IMK 實作。InputMethodKit backporting component 完成的是 client side 與 server side 之間的連線，並不包含 IMK 提供給 server 端的各種工具，例如，我們並沒有實作像 <a href="http://developer.apple.com/documentation/Cocoa/Reference/IMKCandidates_Class/Reference/IMKCandidates_ref.html">IMKCandidates</a> 所提供的選字窗介面，如果要使用選字窗，就自己在 server 端放一個 NSwindow，自行設計。－而且老實說，就目前可以看到的 OS X 輸入法發展，好像所有的第三方輸入法開發者中，也沒有人打算用 OSX 本身提供的選字窗就是了…。
 
 另外，就是在 client 在 server 並沒有正常啟動的狀況下，行為略有不同。IMK 會變成使用英數字元輸出，IMK-Tiger 的行為則是不出字。而就開發上，IMK-Tiger 可能還會更為穩定一些，IMK 是用 launchd 啟動，所以當你想要 kill 掉原本的 process，可能 kill 一次還不乾淨，至於 IMK-Tiger 的 server，則是下一個 kill，就 kill 掉了。
-
-
-InputMethodKit backporting component 可以從 <a href="http://code.google.com/p/imk-tiger/">http://code.google.com/p/imk-tiger/</a> 取得，本專案使用 New BSD License 授權。
