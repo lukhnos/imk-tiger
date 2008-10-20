@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		6A31F7850EAC69E90045D7EE /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6A31F78F0EAC69FC0045D7EE /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				6A31F78B0EAC69F10045D7EE /* PBXTargetDependency */,
+				6A31F7890EAC69EE0045D7EE /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		6A31F7270EAC676F0045D7EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6D1F50EAC643100DF1C2C /* main.m */; };
+		6A31F7290EAC676F0045D7EE /* SimpleIMEController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6D1F70EAC643100DF1C2C /* SimpleIMEController.m */; };
+		6A31F73C0EAC680D0045D7EE /* Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A31F7390EAC680D0045D7EE /* Context.m */; };
+		6A31F73D0EAC680D0045D7EE /* InputMethodKitTiger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A31F73B0EAC680D0045D7EE /* InputMethodKitTiger.mm */; };
+		6A31F7470EAC68880045D7EE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A31F7460EAC68880045D7EE /* Carbon.framework */; };
+		6A31F7480EAC68880045D7EE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA6D20D0EAC655B00DF1C2C /* Cocoa.framework */; };
+		6A31F75E0EAC68E50045D7EE /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A31F75C0EAC68E50045D7EE /* Component.m */; };
+		6A31F75F0EAC68E50045D7EE /* Component.r in Rez */ = {isa = PBXBuildFile; fileRef = 6A31F75D0EAC68E50045D7EE /* Component.r */; };
+		6A31F7600EAC68EA0045D7EE /* Context.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A31F7390EAC680D0045D7EE /* Context.m */; };
+		6A31F7650EAC69040045D7EE /* SimpleIMEServer.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6A31F7210EAC67580045D7EE /* SimpleIMEServer.app */; };
+		6A31F7830EAC69DC0045D7EE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A31F7460EAC68880045D7EE /* Carbon.framework */; };
+		6A31F7840EAC69DC0045D7EE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA6D20D0EAC655B00DF1C2C /* Cocoa.framework */; };
+		6AA6D1F80EAC643100DF1C2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6D1F50EAC643100DF1C2C /* main.m */; };
+		6AA6D1F90EAC643100DF1C2C /* SimpleIMEController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6D1F70EAC643100DF1C2C /* SimpleIMEController.m */; };
+		6AA6D20E0EAC655B00DF1C2C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA6D20D0EAC655B00DF1C2C /* Cocoa.framework */; };
+		6AA6D2100EAC655B00DF1C2C /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AA6D20F0EAC655B00DF1C2C /* InputMethodKit.framework */; };
+		6AAE6B230EAC6AA400E8EBBA /* SimpleIME.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6AAE6B220EAC6AA400E8EBBA /* SimpleIME.icns */; };
+		6AAE6B240EAC6AA400E8EBBA /* SimpleIME.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6AAE6B220EAC6AA400E8EBBA /* SimpleIME.icns */; };
+		6AAE6B250EAC6AA400E8EBBA /* SimpleIME.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6AAE6B220EAC6AA400E8EBBA /* SimpleIME.icns */; };
+		6AAE6B560EAC6BE900E8EBBA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AAE6B550EAC6BE900E8EBBA /* MainMenu.xib */; };
+		6AAE6B570EAC6BE900E8EBBA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AAE6B550EAC6BE900E8EBBA /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A31F7610EAC68F50045D7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA6D1D60EAC63E100DF1C2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A31F7200EAC67580045D7EE;
+			remoteInfo = "SimpleIMEServer (Server for TSM component)";
+		};
+		6A31F7880EAC69EE0045D7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA6D1D60EAC63E100DF1C2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AA6D1EA0EAC640E00DF1C2C;
+			remoteInfo = "SimpleIME (IMK-based)";
+		};
+		6A31F78A0EAC69F10045D7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AA6D1D60EAC63E100DF1C2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A31F7510EAC689A0045D7EE;
+			remoteInfo = "SimpleIME (TSM component)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A31F77B0EAC69270045D7EE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 12;
+			files = (
+				6A31F7650EAC69040045D7EE /* SimpleIMEServer.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6A31F7210EAC67580045D7EE /* SimpleIMEServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleIMEServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A31F7230EAC67580045D7EE /* SimpleIMEServer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleIMEServer-Info.plist"; sourceTree = "<group>"; };
+		6A31F7370EAC680D0045D7EE /* ComponentConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComponentConfig.h; path = IMKTiger/ComponentConfig.h; sourceTree = "<group>"; };
+		6A31F7380EAC680D0045D7EE /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Context.h; path = IMKTiger/Context.h; sourceTree = "<group>"; };
+		6A31F7390EAC680D0045D7EE /* Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Context.m; path = IMKTiger/Context.m; sourceTree = "<group>"; };
+		6A31F73A0EAC680D0045D7EE /* InputMethodKitTiger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputMethodKitTiger.h; path = IMKTiger/InputMethodKitTiger.h; sourceTree = "<group>"; };
+		6A31F73B0EAC680D0045D7EE /* InputMethodKitTiger.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = InputMethodKitTiger.mm; path = IMKTiger/InputMethodKitTiger.mm; sourceTree = "<group>"; };
+		6A31F7460EAC68880045D7EE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		6A31F7520EAC689A0045D7EE /* SimpleIME.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleIME.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A31F75B0EAC68E50045D7EE /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = IMKTiger/Component.h; sourceTree = "<group>"; };
+		6A31F75C0EAC68E50045D7EE /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Component.m; path = IMKTiger/Component.m; sourceTree = "<group>"; };
+		6A31F75D0EAC68E50045D7EE /* Component.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = Component.r; path = IMKTiger/Component.r; sourceTree = "<group>"; };
+		6A31F77C0EAC69480045D7EE /* SimpleIME-TSM-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SimpleIME-TSM-Info.plist"; sourceTree = "<group>"; };
+		6AA6D1EB0EAC640E00DF1C2C /* SimpleIME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleIME.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AA6D1EE0EAC640E00DF1C2C /* SimpleIME-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleIME-Info.plist"; sourceTree = "<group>"; };
+		6AA6D1F50EAC643100DF1C2C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Example-SimpleIME/main.m"; sourceTree = "<group>"; };
+		6AA6D1F60EAC643100DF1C2C /* SimpleIMEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleIMEController.h; path = "Example-SimpleIME/SimpleIMEController.h"; sourceTree = "<group>"; };
+		6AA6D1F70EAC643100DF1C2C /* SimpleIMEController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleIMEController.m; path = "Example-SimpleIME/SimpleIMEController.m"; sourceTree = "<group>"; };
+		6AA6D20D0EAC655B00DF1C2C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		6AA6D20F0EAC655B00DF1C2C /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = /System/Library/Frameworks/InputMethodKit.framework; sourceTree = "<absolute>"; };
+		6AAE6B220EAC6AA400E8EBBA /* SimpleIME.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SimpleIME.icns; sourceTree = "<group>"; };
+		6AAE6B550EAC6BE900E8EBBA /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A31F71F0EAC67580045D7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A31F7470EAC68880045D7EE /* Carbon.framework in Frameworks */,
+				6A31F7480EAC68880045D7EE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A31F7500EAC689A0045D7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A31F7830EAC69DC0045D7EE /* Carbon.framework in Frameworks */,
+				6A31F7840EAC69DC0045D7EE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA6D1E90EAC640E00DF1C2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA6D20E0EAC655B00DF1C2C /* Cocoa.framework in Frameworks */,
+				6AA6D2100EAC655B00DF1C2C /* InputMethodKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6A31F71C0EAC67450045D7EE /* IMK-Tiger */ = {
+			isa = PBXGroup;
+			children = (
+				6A31F75A0EAC68C30045D7EE /* For Component */,
+				6A31F7590EAC68BD0045D7EE /* For Server App to Compile With */,
+				6A31F7560EAC68B90045D7EE /* Shared */,
+			);
+			name = "IMK-Tiger";
+			sourceTree = "<group>";
+		};
+		6A31F7560EAC68B90045D7EE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6A31F7370EAC680D0045D7EE /* ComponentConfig.h */,
+				6A31F7380EAC680D0045D7EE /* Context.h */,
+				6A31F7390EAC680D0045D7EE /* Context.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		6A31F7590EAC68BD0045D7EE /* For Server App to Compile With */ = {
+			isa = PBXGroup;
+			children = (
+				6A31F73A0EAC680D0045D7EE /* InputMethodKitTiger.h */,
+				6A31F73B0EAC680D0045D7EE /* InputMethodKitTiger.mm */,
+			);
+			name = "For Server App to Compile With";
+			sourceTree = "<group>";
+		};
+		6A31F75A0EAC68C30045D7EE /* For Component */ = {
+			isa = PBXGroup;
+			children = (
+				6A31F75B0EAC68E50045D7EE /* Component.h */,
+				6A31F75C0EAC68E50045D7EE /* Component.m */,
+				6A31F75D0EAC68E50045D7EE /* Component.r */,
+			);
+			name = "For Component";
+			sourceTree = "<group>";
+		};
+		6AA6D1D40EAC63E100DF1C2C = {
+			isa = PBXGroup;
+			children = (
+				6A31F71C0EAC67450045D7EE /* IMK-Tiger */,
+				6AA6D1F20EAC641200DF1C2C /* SimpleIME (IMK-based) */,
+				6AA6D1EC0EAC640E00DF1C2C /* Products */,
+				6AA6D20D0EAC655B00DF1C2C /* Cocoa.framework */,
+				6AA6D20F0EAC655B00DF1C2C /* InputMethodKit.framework */,
+				6A31F7460EAC68880045D7EE /* Carbon.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		6AA6D1EC0EAC640E00DF1C2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AA6D1EB0EAC640E00DF1C2C /* SimpleIME.app */,
+				6A31F7210EAC67580045D7EE /* SimpleIMEServer.app */,
+				6A31F7520EAC689A0045D7EE /* SimpleIME.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AA6D1F20EAC641200DF1C2C /* SimpleIME (IMK-based) */ = {
+			isa = PBXGroup;
+			children = (
+				6AAE6B220EAC6AA400E8EBBA /* SimpleIME.icns */,
+				6A31F77C0EAC69480045D7EE /* SimpleIME-TSM-Info.plist */,
+				6AA6D1EE0EAC640E00DF1C2C /* SimpleIME-Info.plist */,
+				6A31F7230EAC67580045D7EE /* SimpleIMEServer-Info.plist */,
+				6AA6D1F50EAC643100DF1C2C /* main.m */,
+				6AA6D1F60EAC643100DF1C2C /* SimpleIMEController.h */,
+				6AA6D1F70EAC643100DF1C2C /* SimpleIMEController.m */,
+				6AAE6B550EAC6BE900E8EBBA /* MainMenu.xib */,
+			);
+			name = "SimpleIME (IMK-based)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A31F7200EAC67580045D7EE /* SimpleIMEServer (Server for TSM component) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A31F7260EAC67590045D7EE /* Build configuration list for PBXNativeTarget "SimpleIMEServer (Server for TSM component)" */;
+			buildPhases = (
+				6A31F71D0EAC67580045D7EE /* Resources */,
+				6A31F71E0EAC67580045D7EE /* Sources */,
+				6A31F71F0EAC67580045D7EE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleIMEServer (Server for TSM component)";
+			productName = SimpleIMEServer;
+			productReference = 6A31F7210EAC67580045D7EE /* SimpleIMEServer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A31F7510EAC689A0045D7EE /* SimpleIME (TSM component) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A31F7580EAC68B90045D7EE /* Build configuration list for PBXNativeTarget "SimpleIME (TSM component)" */;
+			buildPhases = (
+				6A31F74E0EAC689A0045D7EE /* Resources */,
+				6A31F74F0EAC689A0045D7EE /* Sources */,
+				6A31F7500EAC689A0045D7EE /* Frameworks */,
+				6A31F7570EAC68B90045D7EE /* Rez */,
+				6A31F77B0EAC69270045D7EE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A31F7620EAC68F50045D7EE /* PBXTargetDependency */,
+			);
+			name = "SimpleIME (TSM component)";
+			productName = SimpleIME;
+			productReference = 6A31F7520EAC689A0045D7EE /* SimpleIME.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		6AA6D1EA0EAC640E00DF1C2C /* SimpleIME (IMK-based) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AA6D1F10EAC640F00DF1C2C /* Build configuration list for PBXNativeTarget "SimpleIME (IMK-based)" */;
+			buildPhases = (
+				6AA6D1E70EAC640E00DF1C2C /* Resources */,
+				6AA6D1E80EAC640E00DF1C2C /* Sources */,
+				6AA6D1E90EAC640E00DF1C2C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleIME (IMK-based)";
+			productName = SimpleIME;
+			productReference = 6AA6D1EB0EAC640E00DF1C2C /* SimpleIME.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AA6D1D60EAC63E100DF1C2C /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 6AA6D1D90EAC63E100DF1C2C /* Build configuration list for PBXProject "IMKTigerExample" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			mainGroup = 6AA6D1D40EAC63E100DF1C2C;
+			productRefGroup = 6AA6D1EC0EAC640E00DF1C2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A31F7850EAC69E90045D7EE /* All */,
+				6AA6D1EA0EAC640E00DF1C2C /* SimpleIME (IMK-based) */,
+				6A31F7510EAC689A0045D7EE /* SimpleIME (TSM component) */,
+				6A31F7200EAC67580045D7EE /* SimpleIMEServer (Server for TSM component) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6A31F71D0EAC67580045D7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAE6B250EAC6AA400E8EBBA /* SimpleIME.icns in Resources */,
+				6AAE6B560EAC6BE900E8EBBA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A31F74E0EAC689A0045D7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAE6B240EAC6AA400E8EBBA /* SimpleIME.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA6D1E70EAC640E00DF1C2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AAE6B230EAC6AA400E8EBBA /* SimpleIME.icns in Resources */,
+				6AAE6B570EAC6BE900E8EBBA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		6A31F7570EAC68B90045D7EE /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A31F75F0EAC68E50045D7EE /* Component.r in Rez */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6A31F71E0EAC67580045D7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A31F7270EAC676F0045D7EE /* main.m in Sources */,
+				6A31F7290EAC676F0045D7EE /* SimpleIMEController.m in Sources */,
+				6A31F73C0EAC680D0045D7EE /* Context.m in Sources */,
+				6A31F73D0EAC680D0045D7EE /* InputMethodKitTiger.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A31F74F0EAC689A0045D7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A31F7600EAC68EA0045D7EE /* Context.m in Sources */,
+				6A31F75E0EAC68E50045D7EE /* Component.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AA6D1E80EAC640E00DF1C2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA6D1F80EAC643100DF1C2C /* main.m in Sources */,
+				6AA6D1F90EAC643100DF1C2C /* SimpleIMEController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A31F7620EAC68F50045D7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A31F7200EAC67580045D7EE /* SimpleIMEServer (Server for TSM component) */;
+			targetProxy = 6A31F7610EAC68F50045D7EE /* PBXContainerItemProxy */;
+		};
+		6A31F7890EAC69EE0045D7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AA6D1EA0EAC640E00DF1C2C /* SimpleIME (IMK-based) */;
+			targetProxy = 6A31F7880EAC69EE0045D7EE /* PBXContainerItemProxy */;
+		};
+		6A31F78B0EAC69F10045D7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A31F7510EAC689A0045D7EE /* SimpleIME (TSM component) */;
+			targetProxy = 6A31F78A0EAC69F10045D7EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6A31F7240EAC67590045D7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SimpleIMEServer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleIMEServer;
+			};
+			name = Debug;
+		};
+		6A31F7250EAC67590045D7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SimpleIMEServer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleIMEServer;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		6A31F7530EAC689B0045D7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SimpleIME-TSM-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleIME;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		6A31F7540EAC689B0045D7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SimpleIME-TSM-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleIME;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				WRAPPER_EXTENSION = bundle;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		6A31F7860EAC69E90045D7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = All;
+			};
+			name = Debug;
+		};
+		6A31F7870EAC69E90045D7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = All;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		6AA6D1D70EAC63E100DF1C2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		6AA6D1D80EAC63E100DF1C2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		6AA6D1EF0EAC640F00DF1C2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SimpleIME-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleIME;
+			};
+			name = Debug;
+		};
+		6AA6D1F00EAC640F00DF1C2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "SimpleIME-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleIME;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A31F7260EAC67590045D7EE /* Build configuration list for PBXNativeTarget "SimpleIMEServer (Server for TSM component)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A31F7240EAC67590045D7EE /* Debug */,
+				6A31F7250EAC67590045D7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A31F7580EAC68B90045D7EE /* Build configuration list for PBXNativeTarget "SimpleIME (TSM component)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A31F7530EAC689B0045D7EE /* Debug */,
+				6A31F7540EAC689B0045D7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A31F78F0EAC69FC0045D7EE /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A31F7860EAC69E90045D7EE /* Debug */,
+				6A31F7870EAC69E90045D7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA6D1D90EAC63E100DF1C2C /* Build configuration list for PBXProject "IMKTigerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA6D1D70EAC63E100DF1C2C /* Debug */,
+				6AA6D1D80EAC63E100DF1C2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AA6D1F10EAC640F00DF1C2C /* Build configuration list for PBXNativeTarget "SimpleIME (IMK-based)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AA6D1EF0EAC640F00DF1C2C /* Debug */,
+				6AA6D1F00EAC640F00DF1C2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AA6D1D60EAC63E100DF1C2C /* Project object */;
+}

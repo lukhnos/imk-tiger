@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>SimpleIME.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.openvanilla.inputmethod.SimpleIME</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>THNG</string>
+	<key>CFBundleSignature</key>
+	<string>OPVN</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>InputMethodConnectionName</key>
+	<string>SimpleIME_1_Connection</string>
+	<key>InputMethodServerControllerClass</key>
+	<string>SimpleIMEController</string>
+	<key>InputMethodServerDelegateClass</key>
+	<string>SimpleIMEController</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>TISInputSourceID</key>
+	<string>org.openvanilla.inputmethod.SimpleIME</string>
+	<key>tsInputMethodIconFileKey</key>
+	<string>SimpleIME.icns</string>
+  <key>LSBackgroundOnly</key>
+  <string>0</string>	
+</dict>
+</plist>
